@@ -29,6 +29,9 @@ import AboutUs from "./components/Aboutus/Aboutus";
 import FAQ from "./components/FAQ/FAQ";
 import MyProfile from "./pages/MyProfile/MyProfile";
 import MyOrder from "./pages/MyOrder/MyOrder";
+import ConfirmOrder from "./pages/ConfirmOrder.jsx/ConfirmOrder";
+import Payment from "./pages/Payment/Payment";
+import OrderSuccess from "./pages/OrderSuccess/OrderSuccess";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -138,6 +141,72 @@ const App = () => {
                   </div>
                 )
               } />
+              <Route 
+              path="/order/confirm" 
+              element={
+                isLoggedIn ? (<ConfirmOrder/>) : (
+                  <div style={{ padding: "2rem", textAlign: "center" }}>
+                    <h2
+                      style={{
+                        color: "#f97316", // Tailwind's orange-500
+                        fontSize: "2rem",
+                        fontWeight: "bold",
+                        textShadow: "1px 1px 2px rgba(0,0,0,0.2)",
+                        marginBottom: "0.5rem",
+                      }}
+                    >
+                      Please Log In To Proceed
+                    </h2>
+                    <p style={{ color: "#fdba74", fontSize: "1rem" }}>
+                      Your journey continues after login 🔐
+                    </p>
+                  </div>
+                )
+              }/>
+              <Route 
+              path="/order/payment" 
+              element={
+              isLoggedIn ? (<Payment/>) : (
+                <div style={{ padding: "2rem", textAlign: "center" }}>
+                    <h2
+                      style={{
+                        color: "#f97316", // Tailwind's orange-500
+                        fontSize: "2rem",
+                        fontWeight: "bold",
+                        textShadow: "1px 1px 2px rgba(0,0,0,0.2)",
+                        marginBottom: "0.5rem",
+                      }}
+                    >
+                      Please Log In To Proceed
+                    </h2>
+                    <p style={{ color: "#fdba74", fontSize: "1rem" }}>
+                      Your journey continues after login 🔐
+                    </p>
+                  </div>
+              )
+              }/>
+              <Route 
+              path="/order/Success" 
+              element={
+              isLoggedIn ? (<OrderSuccess/>) : (
+                <div style={{ padding: "2rem", textAlign: "center" }}>
+                    <h2
+                      style={{
+                        color: "#f97316", // Tailwind's orange-500
+                        fontSize: "2rem",
+                        fontWeight: "bold",
+                        textShadow: "1px 1px 2px rgba(0,0,0,0.2)",
+                        marginBottom: "0.5rem",
+                      }}
+                    >
+                      Please Log In To Proceed
+                    </h2>
+                    <p style={{ color: "#fdba74", fontSize: "1rem" }}>
+                      Your journey continues after login 🔐
+                    </p>
+                  </div>
+              )
+              }/>
             <Route path="*" element={<NotFound />} />
           </Routes>
 
