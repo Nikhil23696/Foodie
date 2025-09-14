@@ -44,7 +44,7 @@ const Payment = () => {
     }
 
     const options = {
-      key: 'rzp_test_RH03kd9mBRX1jM', // frontend public key
+      key: '', // RAZORPAY KEY ID
       amount: amount,
       currency: currency,
       name: "Foodie",
