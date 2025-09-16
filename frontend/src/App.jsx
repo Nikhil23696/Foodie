@@ -33,6 +33,8 @@ import ConfirmOrder from "./pages/ConfirmOrder.jsx/ConfirmOrder";
 import Payment from "./pages/Payment/Payment";
 import OrderSuccess from "./pages/OrderSuccess/OrderSuccess";
 import OrderDetail from "./pages/OrderDetail/OrderDetail";
+import Privacy from "./components/Privacy/privacy";
+import FeedbackReviews from "./components/FeedbackReviews/FeedbackReviews";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -90,6 +92,7 @@ const App = () => {
                 )
               }
             />
+            <Route path="/faq" element={<FAQ />} />
             <Route path="/food/:id" element={<FoodDetail />} />
             <Route path="/wishlist" element={<Wishlist />} />
             <Route path="/wishlist/:userId" element={<SharedWishlist />} />
@@ -98,6 +101,7 @@ const App = () => {
             <Route path="/referral" element={<ReferralProgram />} />
             <Route path="/restaurant/:id" element={<RestaurantDetail />} />
             <Route path="/aboutus" element={<AboutUs />} />
+
             <Route
               path="/profile/me"
               element={
@@ -229,17 +233,19 @@ const App = () => {
               )
                 
                 } />
+            <Route path="/privacy" element={<Privacy />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
 
           <ScrollToTopButton /> {/* floating button */}
           <CartSummaryBar />
           <AppDownload />
-
+          <FeedbackReviews />
+          
           {/* ✅ Footer now contains FAQ */}
-          <Footer>
-            <FAQ />
-          </Footer>
+          <Footer />
+            {/* <FAQ /> */}
+          {/* </Footer> */}
 
           <Chatbot /> {/* AI Food Assistant */}
         </div>
