@@ -21,7 +21,9 @@ const Payment = () => {
     try {
       const { data } = await axios.post(
         "http://localhost:4000/api/payment/create-order",
-        { amount } // send in USD
+        { amount } , {
+          withCredentials: true
+        }
       );
 
       if (!data.success) {
