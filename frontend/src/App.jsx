@@ -32,12 +32,15 @@ import MyOrder from "./pages/MyOrder/MyOrder";
 import ConfirmOrder from "./pages/ConfirmOrder.jsx/ConfirmOrder";
 import Payment from "./pages/Payment/Payment";
 import OrderSuccess from "./pages/OrderSuccess/OrderSuccess";
+import Privacy from "./components/Privacy/privacy";
+import FeedbackReviews from "./components/FeedbackReviews/FeedbackReviews";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
   const [loading, setLoading] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
-    return !!localStorage.getItem("authToken");
+    // Check for either authToken or user in localStorage
+    return !!localStorage.getItem("authToken") || !!localStorage.getItem("user");
   });
 
   useEffect(() => {
@@ -89,6 +92,7 @@ const App = () => {
                 )
               }
             />
+            <Route path="/faq" element={<FAQ />} />
             <Route path="/food/:id" element={<FoodDetail />} />
             <Route path="/wishlist" element={<Wishlist />} />
             <Route path="/wishlist/:userId" element={<SharedWishlist />} />
@@ -207,6 +211,7 @@ const App = () => {
                   </div>
               )
               }/>
+            <Route path="/privacy" element={<Privacy />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
 
@@ -214,10 +219,12 @@ const App = () => {
           <CartSummaryBar />
           <AppDownload />
 
+          <FeedbackReviews />
+          
           {/* ✅ Footer now contains FAQ */}
-          <Footer>
-            <FAQ />
-          </Footer>
+          <Footer />
+            {/* <FAQ /> */}
+          {/* </Footer> */}
 
           <Chatbot /> {/* AI Food Assistant */}
         </div>
