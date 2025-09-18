@@ -18,7 +18,7 @@ const SimilarRestaurants = () => {
             description: "Authentic Italian cuisine with fresh ingredients and traditional recipes.",
         },
         {
-            id: 1,
+            id: 2,
             name: "The Fork",
             image: "https://b.zmtcdn.com/data/pictures/6/19729416/328bd9a65a1ebde88d5f70c8e1aaf90a_featured_v2.jpg?output-format=webp",
             rating: 4.3,
@@ -29,7 +29,7 @@ const SimilarRestaurants = () => {
             description: "Authentic Italian cuisine with fresh ingredients and traditional recipes.",
         },
         {
-            id: 1,
+            id: 3,
             name: "Green tea",
             image: "https://b.zmtcdn.com/data/pictures/3/2901243/8b17b1df933b87ca0a537f2188343b2d_featured_v2.jpg?output-format=webp",
             rating: 4.4,
@@ -40,7 +40,7 @@ const SimilarRestaurants = () => {
             description: "Authentic Italian cuisine with fresh ingredients and traditional recipes.",
         },
         {
-            id: 1,
+            id: 4,
             name: "Paris Bakry",
             image: "https://b.zmtcdn.com/data/pictures/chains/2/19391402/baba44b8700e02256928be092a272b42_featured_v2.jpg?output-format=webp",
             rating: 4.2,
